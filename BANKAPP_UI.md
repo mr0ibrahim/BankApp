@@ -1,53 +1,72 @@
 # BankApp React UI Documentation
 
 ## Overview
-BankApp is a polished React/Vite prototype that recreates three mobile banking screens from the supplied design reference. The implementation focuses on clean component structure, reusable UI building blocks, responsive presentation, and maintainable styling.
+BankApp is a React/Vite prototype that recreates the three supplied mobile banking designs as **three separate pages**, not one combined preview screen. Each page renders a single iPhone-style interface and the top navigation lets reviewers move between them.
 
-## Screens
+## Pages
 
-### 1. Onboarding Screen
+| Route | Page | Purpose |
+| --- | --- | --- |
+| `/` | Onboarding | Welcome screen with floating cards and the primary get-started CTA. |
+| `/dashboard` | Dashboard | Balance, currency selector, spending chart, and bottom app navigation. |
+| `/activity` | Activity | Card preview, recent transfer contacts, and transaction list. |
+
+## Screen Details
+
+### 1. Onboarding Page
 - Dark premium banking theme.
-- Two floating debit/credit card mockups.
-- Decorative orbital lines and spark shapes.
-- Main value proposition copy.
-- Primary call-to-action button: **Get started**.
+- Two layered payment card mockups.
+- Decorative orbit lines and spark details.
+- Main headline and short supporting text.
+- CTA links to `/dashboard`.
 
-### 2. Balance Dashboard
-- Header panel with general balance: **$ 1,286.00**.
-- Notification icon.
+### 2. Dashboard Page
+- Balance header showing **$ 1,286.00**.
+- Notification action.
 - Currency selector tabs for Dollars, Euro, and Pounds.
-- Monthly spending section.
-- Custom bar chart with active highlighted bar and tooltip.
-- Bottom mobile navigation with five actions.
+- Monthly spending chart with highlighted active bar and tooltip.
+- Mobile bottom navigation styled like the reference.
 
-### 3. Activity & Transactions
-- Compact card preview with masked card number, expiry date, and CVV display.
-- Recent transfer avatar carousel.
-- Transaction list for delivery, taxi, and shopping.
+### 3. Activity Page
+- Compact bank card with masked number, expiry date, and CVV.
+- Recent transfer avatars.
+- Transaction rows for Delivery, Taxi, and Shopping.
 - Negative transaction values styled in red.
+
+## Project Structure
+
+```text
+src/
+  components/
+    AppNavigation.jsx
+    BankCard.jsx
+    Icons.jsx
+    PhoneShell.jsx
+  data/
+    bankData.js
+  pages/
+    ActivityPage.jsx
+    DashboardPage.jsx
+    OnboardingPage.jsx
+  main.jsx
+  routes.js
+  styles.css
+```
+
+## Component Responsibilities
+- `AppNavigation`: top-level page navigation between the three routes.
+- `PhoneShell`: shared phone frame wrapper, title, status bar helpers, and home indicator helpers.
+- `BankCard`: reusable standard/compact payment card component.
+- `Icons`: dependency-free icon component used by navigation and transactions.
+- `OnboardingPage`, `DashboardPage`, `ActivityPage`: independent page-level screens.
+- `bankData`: central static demo data for cards, contacts, spending, and transactions.
+- `routes`: route definitions and route lookup helper.
 
 ## Technical Details
 - Framework: React.
 - Build tool: Vite.
-- Icons: Lightweight inline React icon components (no external icon dependency).
-- Styling: Plain CSS with custom properties and reusable classes.
-- Entry point: `src/main.jsx`.
-- Main stylesheet: `src/styles.css`.
-
-## Component Organization
-- `StatusBar`: shared iPhone-style status row.
-- `BankCard`: reusable card component with standard and compact modes.
-- `OnboardingScreen`: first screen layout.
-- `DashboardScreen`: balance and spending analytics layout.
-- `ActivityScreen`: card, transfers, and transaction layout.
-- `App`: renders the three framed phone screens side by side.
-
-## Features
-- Component-driven React code.
-- Mobile-first screen dimensions matching iPhone 11 Pro / X proportions.
-- Responsive wrapper that stacks screens on narrower displays.
-- Reusable design tokens for colors and typography.
-- Carefully layered shadows, gradients, rounded panels, and decorative elements.
+- Styling: Plain CSS with design tokens, reusable utility classes, and responsive rules.
+- External runtime dependencies: `react`, `react-dom`, and `vite` only.
 - No backend dependency; all demo data is local static data.
 
 ## Available Commands
@@ -59,9 +78,18 @@ npm run build
 npm run preview
 ```
 
+## How to Review the Three Pages
+1. Run `npm install`.
+2. Run `npm run dev`.
+3. Open the local Vite URL.
+4. Use the top navigation:
+   - **Onboarding** for `/`.
+   - **Dashboard** for `/dashboard`.
+   - **Activity** for `/activity`.
+
 ## Future Enhancements
-- Add routing for each mobile screen.
-- Connect balance and transaction data to an API.
-- Add animation for card gestures and dashboard transitions.
-- Add unit/component tests with React Testing Library.
-- Add localization support for Arabic and English banking content.
+- Add React Router if deeper navigation behavior is needed.
+- Connect balances and transactions to a banking API.
+- Add card gesture animations.
+- Add Arabic/English localization.
+- Add visual regression tests for the three page states.

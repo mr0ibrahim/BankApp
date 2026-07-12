@@ -1,5 +1,9 @@
 # BankApp
 
-React/Vite mobile banking UI prototype with three iPhone-style screens: onboarding, dashboard, and activity/transactions.
+React/Vite mobile banking UI prototype with three separate iPhone-style pages:
 
-See [`BANKAPP_UI.md`](./BANKAPP_UI.md) for full documentation, features, and available commands.
+- `/` — Onboarding.
+- `/dashboard` — Balance dashboard.
+- `/activity` — Activity and transactions.
+
+See [`BANKAPP_UI.md`](./BANKAPP_UI.md) for the full structure, page details, features, and review instructions.
