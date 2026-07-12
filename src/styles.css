@@ -1,0 +1,65 @@
+:root {
+  --lime: #eaff2f;
+  --ink: #111217;
+  --muted: #84878f;
+  --panel: #22252b;
+  --soft: #eef0f2;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #1f1f1f; color: var(--ink); }
+button { border: 0; font: inherit; cursor: pointer; }
+.app-shell { min-height: 100vh; display: flex; align-items: center; justify-content: center; gap: 74px; padding: 52px; }
+.screen-frame > p { margin: 0 0 10px; color: #6c6d73; font-size: 20px; font-weight: 700; }
+.screen-frame:first-child > p { color: #55aeea; }
+.phone { position: relative; width: 300px; height: 650px; overflow: hidden; background: #fff; box-shadow: 0 22px 70px rgba(0,0,0,.28); }
+.dark-phone { background: radial-gradient(circle at 78% 16%, rgba(234,255,47,.22), transparent 22%), linear-gradient(135deg, #303326 0%, #17181b 55%); color: white; }
+.status-bar { height: 35px; padding: 13px 20px 0; display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; position: relative; z-index: 5; }
+.status-dark { color: white; } .status-light { color: #111; }
+.status-icons { display: flex; gap: 5px; align-items: center; font-size: 10px; }
+.home-indicator { position: absolute; left: 50%; bottom: 8px; width: 105px; height: 4px; transform: translateX(-50%); background: #171717; border-radius: 20px; z-index: 8; }
+.home-indicator.light { background: white; }
+.orb { position: absolute; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; transform: rotate(24deg); }
+.orb-top { width: 150px; height: 220px; top: -36px; left: 78px; }
+.orb-bottom { width: 210px; height: 300px; bottom: 24px; left: 37px; }
+.spark { position: absolute; color: #777b83; font-size: 23px; z-index: 4; }
+.big-spark { right: 31px; top: 95px; font-size: 34px; } .mid-spark { right: 82px; top: 52px; }
+.floating-cards { position: relative; height: 300px; }
+.bank-card { position: absolute; width: 220px; height: 112px; border: 1px solid rgba(255,255,255,.18); border-radius: 14px; background: linear-gradient(145deg, rgba(60,63,66,.88), rgba(23,24,27,.96)); color: white; box-shadow: 0 18px 35px rgba(0,0,0,.34); }
+.card-one { left: 35px; top: 72px; transform: rotate(14deg); } .card-two { left: 78px; top: 174px; transform: rotate(-15deg); }
+.bank-card small { position: absolute; left: 24px; bottom: 37px; font-size: 8px; color: #ececec; }
+.bank-card p { position: absolute; left: 24px; bottom: 20px; margin: 0; font-size: 9px; letter-spacing: .6px; }
+.chip { position: absolute; right: 28px; top: 36px; width: 25px; height: 18px; }
+.chip::before, .chip span { content: ''; position: absolute; width: 17px; height: 17px; border-radius: 50%; background: var(--lime); opacity: .82; }
+.chip span { left: 9px; background: #6e7378; }
+.intro-copy { position: absolute; bottom: 145px; left: 0; right: 0; text-align: center; z-index: 5; }
+.intro-copy h1 { font-size: 24px; line-height: 1.22; margin: 0 0 18px; } .intro-copy p { margin: 0; font-size: 12px; line-height: 1.45; }
+.primary-button { position: absolute; left: 20px; right: 20px; bottom: 45px; height: 43px; border-radius: 24px; background: var(--lime); font-weight: 800; font-size: 11px; }
+.top-panel { height: 282px; background: radial-gradient(circle at 35% 11%, rgba(234,255,47,.28), transparent 28%), linear-gradient(145deg, #3d412b, #202227 60%); border-bottom-left-radius: 42px; border-bottom-right-radius: 42px; color: white; position: relative; overflow: hidden; }
+.top-panel::before { content: ''; position: absolute; width: 130px; height: 210px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; left: 34px; top: 41px; transform: rotate(26deg); }
+.round-icon { position: absolute; right: 18px; top: 48px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.2); color: white; display: grid; place-items: center; }
+.top-panel p { margin: 72px 0 0; text-align: center; font-size: 12px; font-weight: 700; color: #e6e6e6; } .top-panel h2 { margin: 4px 0 0; text-align: center; font-size: 32px; letter-spacing: .5px; }
+.panel-spark-a { right: 86px; top: 68px; } .panel-spark-b { right: 33px; top: 102px; font-size: 31px; }
+.currency-tabs { position: absolute; left: 17px; right: 17px; bottom: 21px; height: 39px; border-radius: 22px; background: #53585c; display: flex; align-items: center; justify-content: space-around; font-size: 11px; font-weight: 800; }
+.currency-tabs button { height: 31px; padding: 0 17px; border-radius: 18px; background: var(--lime); font-size: 11px; font-weight: 900; }
+.content, .activity-content { padding: 24px 18px; }
+.section-head { display: flex; justify-content: space-between; align-items: center; } h3 { margin: 0; font-size: 21px; } .section-head button { background: #202126; color: white; border-radius: 13px; padding: 6px 10px; font-size: 9px; font-weight: 800; }
+.chart { height: 178px; display: flex; align-items: end; justify-content: space-between; padding: 25px 2px 0; position: relative; }
+.tooltip { position: absolute; right: 55px; top: 28px; background: #1d1f24; color: white; border-radius: 13px; padding: 7px 10px; font-size: 9px; }
+.bar-wrap { height: 132px; display: flex; flex-direction: column; align-items: center; justify-content: end; gap: 9px; font-size: 10px; }
+.bar-wrap i { width: 7px; background: #171923; border-radius: 8px; box-shadow: 0 0 0 8px rgba(234,236,241,.7); } .bar-wrap i.active { background: var(--lime); }
+.bottom-nav { position: absolute; left: 15px; right: 15px; bottom: 30px; display: flex; align-items: center; justify-content: space-between; color: #14171b; }
+.bottom-nav button { width: 48px; height: 48px; background: #14171b; color: white; border-radius: 50%; display: grid; place-items: center; } .active-nav { color: #ddeb2e; }
+.card-stack { height: 185px; position: relative; }
+.main-card { left: 17px; top: 64px; width: 266px; height: 137px; z-index: 3; }
+.compact-card .card-number { position: absolute; left: 25px; top: 57px; right: 25px; display: flex; justify-content: space-between; font-size: 15px; letter-spacing: 1px; }
+.compact-card .valid, .compact-card .cvv { top: 86px; bottom: auto; color: #b9bdc1; font-size: 10px; line-height: 1.25; }
+.compact-card .cvv { left: 112px; } .compact-card strong { color: white; font-size: 11px; }
+.shadow-card { position: absolute; left: 35px; width: 230px; height: 32px; border-radius: 0 0 14px 14px; background: #9aa0a3; bottom: -13px; opacity: .8; }
+.shadow-card.two { left: 51px; width: 196px; bottom: -21px; opacity: .45; }
+.activity-content { padding-top: 26px; } .avatar-row { display: flex; gap: 10px; margin: 20px 0 27px; overflow: hidden; }
+.avatar-row img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 3px solid #6d6cff; } .avatar-row img:nth-child(2) { border-color: #04d1e8; } .avatar-row img:nth-child(4) { border-color: #08c9e5; }
+.transactions { margin-top: 20px; display: grid; gap: 20px; } .transaction { display: grid; grid-template-columns: 43px 1fr auto; align-items: center; gap: 10px; }
+.transaction > span { width: 38px; height: 38px; border-radius: 50%; background: #edf0f1; color: #b5bcc1; display: grid; place-items: center; } .transaction h4 { margin: 0 0 3px; font-size: 13px; } .transaction p { margin: 0; color: #a6a8ad; font-size: 9px; } .transaction strong { color: #ff4b45; font-size: 12px; }
+@media (max-width: 1050px) { .app-shell { flex-direction: column; gap: 34px; padding: 30px 16px; } }
