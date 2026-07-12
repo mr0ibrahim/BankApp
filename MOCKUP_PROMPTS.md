@@ -2,6 +2,22 @@
 
 استخدم البرومبتات التالية داخل ChatGPT أو أي أداة توليد صور/تصميم لعرض شكل الواجهات الثلاث. البرومبتات مكتوبة لتوليد موك أب واضح وقابل للمراجعة البصرية.
 
+## صور الموك أب الجاهزة
+
+> الصور التالية مضافة للمعاينة داخل ملف Markdown، ويمكن استخدامها كمرجع بصري سريع لشكل الواجهات.
+
+### صفحة البداية Onboarding
+![Onboarding mockup](docs/mockups/onboarding-mockup.svg)
+
+### صفحة النشاط والمعاملات Activity
+![Activity transactions mockup](docs/mockups/activity-mockup.svg)
+
+### صفحة لوحة الرصيد Dashboard
+![Dashboard mockup](docs/mockups/dashboard-mockup.svg)
+
+### عرض الصفحات الثلاث معًا
+![All BankApp pages mockup](docs/mockups/all-pages-mockup.svg)
+
 ## 1) برومبت صفحة البداية Onboarding
 
 ```text
